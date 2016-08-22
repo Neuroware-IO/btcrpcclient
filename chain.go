@@ -141,7 +141,7 @@ func (c *Client) GetBlockVerboseAsync(blockHash *chainhash.Hash, verboseTx bool)
 		hash = blockHash.String()
 	}
 
-	cmd := btcjson.NewGetBlockCmd(hash, btcjson.Bool(true), &verboseTx)
+	cmd := btcjson.NewGetBlockCmd(hash, btcjson.Bool(true), nil)
 	return c.sendCmd(cmd)
 }
 
